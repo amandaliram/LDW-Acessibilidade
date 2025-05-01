@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade - Ferramentas Acessíveis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu-acessibilidade">
+        <div>
+            <button id="preto-e-branco">
+                <img src="images/preto_e_branco.png" alt="Ativar modo preto e branco" class="icone">
+            </button>
+        </div>
+        <div>
+            <button id="aumentar-texto">
+                <img src="images/a_mais.png" alt="" class="icone">
+            </button>
+        </div>
+        <div>
+            <button id="diminuir-texto">
+                <img src="images/a_menos.png" alt="" class="icone">
+            </button>
+        </div>
+        <div>
+            <button id="alto-contraste">
+                <img src="images/alto_contraste.png" alt="Ativar alto contraste" class="icone">
+            </button>
+        </div>
+        <div>
+            <button>
+                <img src="images/libras.png" alt="Ativar tradução para Libras" class="icone">
+            </button>
+        </div>
+        <div>
+            <button>
+                <img src="images/voz.png" alt="Ativar leitura de voz" class="icone">
+            </button>
+        </div>
+    </div>
+    <h1>Teste de ferramentas ACD</h1>
+    <br>
+    <a href="#">Clique aqui</a>
+
+    <img src="images/imagem.webp" alt="Acessibilidade">
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    
+    <!-- PRETO E BRANCO ---> 
+    <script>
+                // Ativar/desativar modo preto e branco
+        document.getElementById("preto-e-branco").addEventListener("click", () => {
+            document.body.classList.toggle("preto-branco");
+        });
+    </script>
+
+    <!-- ALTO CONTRASTE ---> 
+    <script>
+        // Ativar/desativar alto contraste
+        document.getElementById("alto-contraste").addEventListener("click", () => {
+            document.body.classList.toggle("alto-contraste");
+        });
+    </script>
+
+    <!-- A+ E A- --> 
+    <script type="text/javascript"> 
+        window.onload = function() 
+        { 
+        //Seleciona o elemento <body> para que possamos alterar seu estilo
+        var corpoDaPagina = document.querySelector('body'); 
+        var aumentarTexto = document.getElementById('aumentar-texto'); 
+        var diminuirTexto = document.getElementById('diminuir-texto'); 
+        
+        // o padrão de tamanho equivale a 100% do valor definido no style 
+        var fontSize = 100; 
+        
+        // Valor percentual de 10% que irá aumentar ou diminuir do padrão da fonte 
+        var qntAumentarDiminuir = 10; 
+        
+        // Evento de click para aumentar a fonte 
+        aumentarTexto.addEventListener 
+        ('click', function(event) 
+            { 
+            fontSize = fontSize + qntAumentarDiminuir; 
+            corpoDaPagina.style.fontSize = fontSize + '%';
+            } 
+        );
+
+        // Evento de click para diminuir a fonte 
+        diminuirTexto.addEventListener 
+        ('click', function(event) 
+            { 
+            fontSize = fontSize - qntAumentarDiminuir; 
+            corpoDaPagina.style.fontSize = fontSize + '%'; 
+            }
+        ); 
+    } 
+</script>
+
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+</body>
+</html>
